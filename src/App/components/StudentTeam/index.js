@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './index.scss'
+import InputP from '../StudentTeam/InputP';
 
 
 class StudentTeam extends React.Component {
@@ -48,7 +49,7 @@ class StudentTeam extends React.Component {
           return(
             <div key={team.id} className="teamContent">
               <div className="teamName">
-                <p>{team.name}</p>
+                <InputP teamName = {team.name} teamId={team.id}/>
               </div>
               <div className="studentList">
                 {team.studentList.map(student => {
