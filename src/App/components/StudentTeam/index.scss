@@ -1,3 +1,29 @@
 @import "src/style/variables";
 @import "src/App/components/StudentList/index";
 
+.teamDiv {
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.teamContent,.teamName,.studentList,.teamHeader{
+  border: 1px solid black;
+}
+
+.teamHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.teamContent {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+
+.teamName {
+  text-align:center
+}

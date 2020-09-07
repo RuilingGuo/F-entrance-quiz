@@ -37,7 +37,7 @@ class StudentTeam extends React.Component {
 
   render() {
     return <div className="teamDiv">
-      <div>
+      <div className="teamHeader">
         <h1>分组列表</h1>
         <button onClick={this.handleGroupStudent}>分组学员</button>
       </div>
@@ -46,11 +46,11 @@ class StudentTeam extends React.Component {
           return
         }
           return(
-            <div key={team.id}>
-              <div>
+            <div key={team.id} className="teamContent">
+              <div className="teamName">
                 <p>{team.name}</p>
               </div>
-              <div>
+              <div className="studentList">
                 {team.studentList.map(student => {
                   return (<div key={student.id} className="student"><p>{student.id}.{student.name}</p></div>)
                 })}
