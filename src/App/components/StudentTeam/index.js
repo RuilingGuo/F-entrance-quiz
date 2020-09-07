@@ -8,12 +8,22 @@ class StudentTeam extends React.Component {
   }
 
   componentDidMount() {
-
-  }
-
-  handleClickGroupStudent = () =>{
     fetch("http://localhost:8080/student/teams",{
       method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+      .then(response => response.json())
+      .then(data => this.setState({
+        studentTeamList: data
+      }))
+      .catch(err => console.log(err))
+  }
+
+  handleGroupStudent = () =>{
+    fetch("http://localhost:8080/student/teams",{
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -29,11 +39,14 @@ class StudentTeam extends React.Component {
     return <div className="teamDiv">
       <div>
         <h1>分组列表</h1>
-        <button onClick={this.handleClickGroupStudent}>分组学员</button>
+        <button onClick={this.handleGroupStudent}>分组学员</button>
       </div>
       {this.state.studentTeamList.map(team => {
+        if(team.studentList.length===0){
+          return
+        }
           return(
-            <div>
+            <div key={team.id}>
               <div>
                 <p>{team.name}</p>
               </div>
