@@ -1,6 +1,5 @@
 import React from 'react';
-
-// import styles from './index.scss'
+import styles from './index.scss'
 
 
 class InputButton extends React.Component {
@@ -45,12 +44,12 @@ class InputButton extends React.Component {
   };
 
   render() {
-    return <div>
+    return <div className="addSInputBtnDiv">
       {this.state.inputMode ?
-        <input onKeyUp={this.handleEnterKey} value={this.state.studentName} onChange={this.handleGetInputValue}/> :
-        <button onClick={() => this.setState({
+        <input className="addSInput" onKeyUp={this.handleEnterKey} value={this.state.studentName} onChange={this.handleGetInputValue}/> :
+        <button className="addSBtn" onClick={() => this.setState({
           inputMode: true
-        })}>添加学生</button>}
+        })}>+ 添加学生</button>}
     </div>;
   }
 }
