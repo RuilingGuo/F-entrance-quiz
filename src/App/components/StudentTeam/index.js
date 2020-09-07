@@ -39,7 +39,7 @@ class StudentTeam extends React.Component {
     return <div className="teamDiv">
       <div className="teamHeader">
         <h1>分组列表</h1>
-        <button onClick={this.handleGroupStudent}>分组学员</button>
+        <button onClick={this.handleGroupStudent} className="groupStudentButton">分组学员</button>
       </div>
       {this.state.studentTeamList.map(team => {
         if(team.studentList.length===0){

@@ -3,27 +3,43 @@
 
 .teamDiv {
   padding: 10px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
+  margin-top: 10px;
+  margin-bottom: 10px;
 
-.teamContent,.teamName,.studentList,.teamHeader{
-  border: 1px solid black;
 }
 
 .teamHeader{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 12px;
 }
 
 .teamContent {
   display: flex;
   align-content: center;
   flex-direction: column;
+  border: 2px solid $gray;
+  margin: 12px;
+  padding: 0;
+  //box-shadow: $gray 0 0 1px 1px;
 }
 
 
 .teamName {
-  text-align:center
+  text-align:center;
+  background-color: $gray;
+  margin: 0;
+  padding: 0;
+  color: $light-gray;
+}
+
+.groupStudentButton {
+  color: $light-gray;
+  background-color: $primary-color;
+  border: 0;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  margin: auto 0;
 }
