@@ -1,6 +1,6 @@
 @import "src/style/variables";
 
-.student, .addStudentBtn {
+.list-item, .addStudentBtn {
   background-color: $light-gray;
   font-size: $base-font-size;
   padding: 2px;
@@ -11,11 +11,11 @@
   justify-content: center;
   align-items: center;
 }
-.student p {
+.list-item p {
   margin: 0;
 }
 
-.studentList {
+.group-content-list, .trainee-List {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

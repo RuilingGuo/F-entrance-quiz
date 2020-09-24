@@ -13,7 +13,7 @@ class StudentList extends React.Component {
   }
 
   updateStudentList = () => {
-    fetch("http://localhost:8080/student/students",{
+    fetch("http://localhost:8080/trainees",{
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -29,9 +29,11 @@ class StudentList extends React.Component {
   render() {
     return <div className="studentDiv">
       <h1 style={{margin: 10}}>学员列表</h1>
-      <div className="studentList">
+      <div className="traineeList">
         {this.state.studentList.map(student => {
-        return (<div key={student.id} className="student"><p>{student.id}.{student.name}</p></div>)
+        return (
+          <div key={student.id} className="student"><p>{student.id}.{student.name}</p></div>
+        )
       })}
         <div className="addStudentBtn">
         <InputButton updateStudentList={this.updateStudentList}/>

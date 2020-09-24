@@ -1,21 +1,21 @@
 import React from 'react';
 import styles from './index.scss'
 
-class InputP extends React.Component {
+class GroupNameEditor extends React.Component {
   state = {
     inputMode: false,
-    teamName: ""
+    groupName: ""
   };
 
   componentDidMount() {
     this.setState({
-      teamName: this.props.teamName
+      groupName: this.props.groupName
     })
   }
 
   handleEnterKey = (e) => {
     if(e.keyCode === 13) {
-      this.updateTeamName()
+      this.updateGroupName()
         .then( () => {
           this.setState({
           inputMode: false
@@ -26,34 +26,31 @@ class InputP extends React.Component {
     }
   };
 
-  updateTeamName = () => {
-    return fetch('http://localhost:8080/student/team', {
-      method: 'POST',
+  updateGroupName = () => {
+    return fetch(`http://localhost:8080/groups/${this.props.groupId}`, {
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        "teamId": this.props.teamId,
-        "teamName": this.state.teamName,
-      })
+      body: this.state.groupName,
     })
   };
 
   handleGetInputValue = (event) => {
     this.setState({
-      teamName : event.target.value,
+      groupName : event.target.value,
     })
   };
 
   render() {
     return <div >
       {this.state.inputMode ?
-        <input className="updateTeamName" onKeyUp={this.handleEnterKey} value={this.state.teamName} onChange={this.handleGetInputValue}/> :
+        <input className="updateGroupName" onKeyUp={this.handleEnterKey} value={this.state.groupName} onChange={this.handleGetInputValue}/> :
         <p onClick={() => this.setState({
           inputMode: true
-        })}>{this.state.teamName}</p>}
+        })}>{this.state.groupName}</p>}
     </div>;
   }
 }
 
-export default InputP;
+export default GroupNameEditor;

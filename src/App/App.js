@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.scss';
 import StudentList from "./components/StudentList/index"
-import StudentTeam from "./components/StudentTeam/index"
+import Group from "./components/Group/index"
 
 class App extends Component {
   render() {
     return (
       <div data-testid="app" className="App">
-        <StudentTeam/>
+        <Group/>
         <StudentList/>
       </div>
     );

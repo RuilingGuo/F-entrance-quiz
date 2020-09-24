@@ -1,21 +1,21 @@
 @import "src/style/variables";
 @import "src/App/components/StudentList/index";
 
-.teamDiv {
+.group-div {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
 
 }
 
-.teamHeader{
+.group-header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 12px;
 }
 
-.teamContent {
+.group-content {
   display: flex;
   align-content: center;
   flex-direction: column;
@@ -26,7 +26,7 @@
 }
 
 
-.teamName {
+.group-name {
   text-align:center;
   background-color: $gray;
   margin: 0;
@@ -34,7 +34,7 @@
   color: $light-gray;
 }
 
-.groupStudentButton {
+.group-auto-group__btn {
   color: $light-gray;
   background-color: $primary-color;
   border: 0;
