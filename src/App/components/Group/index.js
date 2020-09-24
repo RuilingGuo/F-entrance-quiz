@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.scss'
-import GroupNameEditor from './GroupNameEditor';
+import GroupNameEditor from './components/GroupNameEditor';
 
 
 class Group extends React.Component {
