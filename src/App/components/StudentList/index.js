@@ -27,12 +27,12 @@ class StudentList extends React.Component {
   }
 
   render() {
-    return <div className="studentDiv">
+    return <div className="trainees-div">
       <h1 style={{margin: 10}}>学员列表</h1>
-      <div className="traineeList">
+      <div className="group-content-list">
         {this.state.studentList.map(student => {
         return (
-          <div key={student.id} className="student"><p>{student.id}.{student.name}</p></div>
+          <div key={student.id} className="list-item"><p>{student.id}.{student.name}</p></div>
         )
       })}
         <div className="addStudentBtn">

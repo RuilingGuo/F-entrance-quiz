@@ -26,7 +26,7 @@ class InputButton extends React.Component {
   };
 
   addNewStudent = () => {
-    return fetch('http://localhost:8080/student/student', {
+    return fetch('http://localhost:8080/trainee/student', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
