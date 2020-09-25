@@ -37,6 +37,7 @@ class Group extends React.Component {
   }
 
   render() {
+    // TODO Feedback: div嵌套层次太深
     return <div className="group-div">
       <div className="group-header">
         <h1>分组列表</h1>

@@ -7,6 +7,7 @@ class App extends Component {
   render() {
     return (
       <div data-testid="app" className="App">
+        {/*// TODO Feedback:GroupList命名更合理*/}
         <Group/>
         <StudentList/>
       </div>

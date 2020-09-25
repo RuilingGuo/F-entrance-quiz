@@ -3,6 +3,7 @@ import styles from './index.scss'
 
 
 class InputButton extends React.Component {
+  // TODO Feedback: studentName不需要存在state
   state = {
     inputMode: false,
     studentName: ""
@@ -26,6 +27,7 @@ class InputButton extends React.Component {
   };
 
   addNewStudent = () => {
+    // TODO Feedback: URL和规定的API不符合
     return fetch('http://localhost:8080/trainee/student', {
       method: 'POST',
       headers: {
@@ -47,6 +49,7 @@ class InputButton extends React.Component {
     return <div className="addSInputBtnDiv">
       {this.state.inputMode ?
         <input className="addSInput" onKeyUp={this.handleEnterKey} value={this.state.studentName} onChange={this.handleGetInputValue}/> :
+        // TODO Feedback: 不建议inline 方法
         <button className="addSBtn" onClick={() => this.setState({
           inputMode: true
         })}>+ 添加学生</button>}
